@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainWindowBorderPane" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="todolist.com.Controller">
+
+    <top>
+
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <items>
+                        <MenuItem onAction="#openNewItemDialog" text="New...." />
+                        <SeparatorMenuItem />
+                        <MenuItem onAction="#exportTodoList" text="Export" />
+                        <MenuItem onAction="#importTodoList" text="Import" />
+                        <SeparatorMenuItem />
+                        <MenuItem onAction="#handleExit" text="Exit" />
+                    </items>
+                </Menu>
+            </MenuBar>
+
+            <HBox alignment="CENTER_LEFT">
+                <Button onAction="#openNewItemDialog">
+                    <tooltip>
+                        <Tooltip text="Add new item to do" />
+                    </tooltip>
+                <graphic>
+                    <ImageView>
+                        <Image url="@/toolbarButtonGraphics/general/New24.gif" />
+                    </ImageView>
+                </graphic>
+                </Button>
+
+                <Button fx:id="editButton" onAction="#openEditItemDialog">
+                    <tooltip>
+                        <Tooltip text="Edit item" />
+                    </tooltip>
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/toolbarButtonGraphics/general/Edit24.gif" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="deleteButton" onAction="#onDeleteButton">
+                    <tooltip>
+                        <Tooltip text="Delete item" />
+                    </tooltip>
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/toolbarButtonGraphics/general/Delete24.gif" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Separator orientation="VERTICAL" />
+                <ToggleButton fx:id="onlyTodayToggleButton" alignment="BASELINE_CENTER" onAction="#handleTodayToggleButtonPressed" text="Today's tasks">
+                </ToggleButton>
+            </HBox>
+
+        </VBox>
+
+
+    </top>
+    <left>
+        <ListView fx:id="listView" onKeyReleased="#onDeleteKeyReleased" />
+    </left>
+
+    <center>
+        <VBox>
+            <TextArea fx:id="descriptionField" style="-fx-background-color: white" wrapText="true" VBox.vgrow="ALWAYS" />
+            <HBox>
+                <Label fx:id="deadlineDate" />
+            </HBox>
+        </VBox>
+
+    </center>
+
+</BorderPane>

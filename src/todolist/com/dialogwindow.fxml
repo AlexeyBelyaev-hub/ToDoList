@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.browniebytes.javafx.control.DateTimePicker?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="todolist.com.DialogWindowController"
+            prefHeight="400.0" prefWidth="600.0">
+    <content>
+        <GridPane>
+            <Label text="Short description" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="shortDescription" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Detail description" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextArea fx:id="detailDescription" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                      wrapText="true"/>
+
+            <Label text="Short description" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <DateTimePicker fx:id="deadlinePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        </GridPane>
+    </content>
+
+
+
+</DialogPane>
